@@ -40,12 +40,27 @@
         }
         <style>
     /* Add this CSS to your existing styles */
+    li {
+        position: relative;
+        cursor: pointer;
+    }
+
     li:hover::after {
         content: " - English Translation"; /* Replace with the actual translations */
+        position: absolute;
+        top: -1.5em; /* Adjust the positioning as needed */
+        left: 0;
+        background-color: white; /* Background color for the tooltip */
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
         font-size: 14px;
-        color: green;
+        color: green; /* Text color for the tooltip */
+        z-index: 1; /* Ensure the tooltip appears above the other content */
+        display: inline-block;
     }
 </style>
+
 
     </style>
 </head>
