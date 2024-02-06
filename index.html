@@ -4,117 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capoeira Mind Map</title>
-
-    <head>
-    ...
-    <style>
-    /* Existing CSS styles */
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 20px;
-    }
-
-    h3 {
-        color: navy;
-        margin-top: 20px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        margin: 5px 0;
-        cursor: pointer;
-        position: relative;
-    }
-
-    li:hover {
-        color: darkred;
-    }
-
-    #moveDescription {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-    }
-
-    /* Tooltip CSS for English translations */
-    li:hover::after {
-        content: " - English Translation"; /* Replace with the actual translations */
-        position: absolute;
-        top: -1.5em; /* Adjust the positioning as needed */
-        left: 0;
-        background-color: white;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        color: green;
-        z-index: 1;
-        display: inline-block;
-    }
-
-    /* CSS for specific translations */
-    .translate-esquivas:hover::after {
-        content: " - Dodges"; /* English translation for "Esquivas" */
-    }
-
-    .translate-defrente:hover::after {
-        content: " - Forward evasion technique"; /* English translation for "De Frente" */
-    }
-
-    .translate-delado:hover::after {
-        content: " - Side evasion move"; /* English translation for "De Lado" */
-    }
-
-    .translate-diagonal:hover::after {
-        content: " - Diagonal escape from an attack"; /* English translation for "Diagonal" */
-    }
-</style>
-
-</head>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Capoeira Moves Mind Map</h1>
     <p>Welcome to the Capoeira Moves Interactive Mind Map.</p>
-    <script>
-    function showMoveDescription() {
-        alert('Capoeira is an Afro-Brazilian martial art that combines elements of dance, acrobatics, and music.');
-    }
-</script>
-
-<button onclick="showMoveDescription()">Learn about Capoeira</button>
+    <button id="learnButton">Learn about Capoeira</button>
 
     <h2>Capoeira Moves</h2>
 
-<h3>Esquivas</h3>
-<ul>
-    <li onclick="showMoveDescription('De Frente: A forward evasion technique.')">De Frente</li>
-    <li onclick="showMoveDescription('De Lado: A side evasion move.')">De Lado</li>
-    <li onclick="showMoveDescription('Diagonal: A diagonal escape from an attack.')">Diagonal</li>
-</ul>
+    <h3>Esquivas</h3>
+    <ul>
+        <li class="translate-esquivas" data-translation="Dodges">De Frente</li>
+        <li class="translate-esquivas" data-translation="Forward evasion technique">De Lado</li>
+        <li class="translate-esquivas" data-translation="Side evasion move">Diagonal</li>
+    </ul>
 
-<h3>Ataques</h3>
-<ul>
-    <li onclick="showMoveDescription('Armada: A powerful spinning kick.')">Armada</li>
-    <li onclick="showMoveDescription('Meia Lua de Compasso: A circular kick.')">Meia Lua de Compasso</li>
-    <li onclick="showMoveDescription('Queixada: A frontal kick with a deceptive start.')">Queixada</li>
-</ul>
+    <h3>Ataques</h3>
+    <ul>
+        <li class="translate-ataques" data-translation="Attacks">Armada</li>
+        <li class="translate-ataques" data-translation="Powerful spinning kick">Meia Lua de Compasso</li>
+        <li class="translate-ataques" data-translation="Frontal kick with deceptive start">Queixada</li>
+    </ul>
 
-<h3>Movimentos de Chão</h3>
-<ul>
-    <li onclick="showMoveDescription('Negativa: A ground move to avoid high attacks.')">Negativa</li>
-    <li onclick="showMoveDescription('Role: A rolling move to dodge or counter.')">Role</li>
-    <li onclick="showMoveDescription('Descida Basica: A basic descent to the ground for defense.')">Descida Basica</li>
-</ul>
+    <h3>Movimentos de Chão</h3>
+    <ul>
+        <li class="translate-movimentos" data-translation="Ground moves to avoid high attacks">Negativa</li>
+        <li class="translate-movimentos" data-translation="Rolling move to dodge or counter">Role</li>
+        <li class="translate-movimentos" data-translation="Basic descent to the ground for defense">Descida Basica</li>
+    </ul>
 
-<div id="moveDescription"></div>
+    <div id="moveDescription"></div>
 
-
-    <!-- We will add our mind map here -->
+    <script src="script.js"></script>
 </body>
 </html>
