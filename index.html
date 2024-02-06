@@ -1,50 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-</style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capoeira Mind Map</title>
-    <link rel="stylesheet" href="style.css">
 
-    <script src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif; /* Use a sans-serif font for readability */
+            margin: 20px;
+        }
 
+        h1 {
+            color: navy;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        li:hover::after {
+            content: attr(data-translation); /* Display the English translation */
+            position: absolute;
+            top: -1.5em;
+            left: 0;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            color: green;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        #moveDescription {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Capoeira Moves Mind Map</h1>
     <p>Welcome to the Capoeira Moves Interactive Mind Map.</p>
-    <button id="learnButton">Learn about Capoeira</button>
 
     <h2>Capoeira Moves</h2>
 
     <h3>Esquivas</h3>
     <ul>
-        <li class="translate-esquivas" data-translation="Dodges">De Frente</li>
-        <li class="translate-esquivas" data-translation="Forward evasion technique">De Lado</li>
-        <li class="translate-esquivas" data-translation="Side evasion move">Diagonal</li>
+        <li data-translation="Dodges">De Frente</li>
+        <li data-translation="Forward dodge">De Lado</li>
+        <li data-translation="Sideways dodge">Diagonal</li>
     </ul>
 
     <h3>Ataques</h3>
     <ul>
-        <li class="translate-ataques" data-translation="Attacks">Armada</li>
-        <li class="translate-ataques" data-translation="Powerful spinning kick">Meia Lua de Compasso</li>
-        <li class="translate-ataques" data-translation="Frontal kick with deceptive start">Queixada</li>
+        <li data-translation="Attacks">Armada</li>
+        <li data-translation="Jaw strike">Queixada</li>
+        <li data-translation="Compass crescent">Meia Lua de Compasso</li>
     </ul>
 
     <h3>Movimentos de Chão</h3>
     <ul>
-        <li class="translate-movimentos" data-translation="Ground moves to avoid high attacks">Negativa</li>
-        <li class="translate-movimentos" data-translation="Rolling move to dodge or counter">Role</li>
-        <li class="translate-movimentos" data-translation="Basic descent to the ground for defense">Descida Basica</li>
+        <li data-translation="Ground move to avoid high attacks">Negativa</li>
+        <li data-translation="Rolling move to dodge or counter">Role</li>
+        <li data-translation="Basic descent to the ground for defense">Descida Basica</li>
     </ul>
 
     <div id="moveDescription"></div>
 
+    <!-- Your JavaScript code (script.js) should be included here -->
     <script src="script.js"></script>
 </body>
 </html>
+
