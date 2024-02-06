@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
     const learnButton = document.getElementById("learnButton");
     const moveDescription = document.getElementById("moveDescription");
-    const moves = document.querySelectorAll(".translate-esquivas, .translate-ataques, .translate-movimentos");
+    const moves = document.querySelectorAll(".node");
 
-    const descriptions = {
-        "de frente": "Forward evasion technique",
-        "de lado": "Side evasion move",
-        "diagonal": "Diagonal escape from an attack",
-        "Armada": "Powerful spinning kick",
-        "Meia Lua de Compasso": "Circular kick",
-        "Queixada": "Frontal kick with a deceptive start",
-        // Add more descriptions for other moves here
+    const translations = {
+        "esquivas": "Dodges",
+        "de frente": "Forward dodge",
+        "de lado": "Sideways dodge",
+        "diagonal": "Diagonal dodge",
+        "ataques": "Attacks",
+        "Armada": "Armed",
+        "Queixada": "Jaw strike",
+        "Meia Lua de Compasso": "Compass crescent",
+        "Negativa": "Negativa",
+        "Role": "Roll",
+        "Descida Basica": "Basic descent",
+        // Add more translations for other moves here
     };
 
     learnButton.addEventListener("click", function () {
@@ -18,23 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     moves.forEach(function (move) {
-        const translation = move.getAttribute("data-translation");
-        const description = descriptions[move.textContent.toLowerCase()]; // Convert to lowercase for matching
-
         move.addEventListener("mouseover", function () {
-            // Show the English translation
-            moveDescription.textContent = translation;
-            // Show the brief description
-            moveDescription.insertAdjacentHTML("afterend", `<p>${description}</p>`);
+            const translation = translations[move.textContent.toLowerCase()];
+            if (translation) {
+                moveDescription.textContent = translation;
+            }
         });
 
         move.addEventListener("mouseout", function () {
-            // Clear both the translation and description
             moveDescription.textContent = "";
-            const briefDescription = document.querySelector("#moveDescription + p");
-            if (briefDescription) {
-                briefDescription.remove();
-            }
         });
     });
 });
