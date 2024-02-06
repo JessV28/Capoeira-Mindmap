@@ -1,37 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const learnButton = document.getElementById("learnButton");
-    const moveDescription = document.getElementById("moveDescription");
-    const moves = document.querySelectorAll(".node");
-
-    const translations = {
-        "esquivas": "Dodges",
-        "de frente": "Forward dodge",
-        "de lado": "Sideways dodge",
-        "diagonal": "Diagonal dodge",
-        "ataques": "Attacks",
-        "Armada": "Armed",
-        "Queixada": "Jaw strike",
-        "Meia Lua de Compasso": "Compass crescent",
-        "Negativa": "Negativa",
-        "Role": "Roll",
-        "Descida Basica": "Basic descent",
-        // Add more translations for other moves here
-    };
-
-    learnButton.addEventListener("click", function () {
-        alert("Capoeira is an Afro-Brazilian martial art that combines elements of dance, acrobatics, and music.");
+document.addEventListener('DOMContentLoaded', function() {
+    // Example of handling clicks on nodes to play audio
+    document.querySelectorAll('.node').forEach(node => {
+        node.addEventListener('click', () => {
+            const audio = new Audio(`audio/${node.dataset.portugueseWord}.mp3`);
+            audio.play();
+        });
     });
 
-    moves.forEach(function (move) {
-        move.addEventListener("mouseover", function () {
-            const translation = translations[move.textContent.toLowerCase()];
+    // Example of showing translations on hover
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    document.body.appendChild(tooltip);
+
+    const translations = {
+        'Esquivas': 'Dodges',
+        'de frente': 'Forward dodge',
+        'de lado': 'Sideways dodge',
+        'diagonal': 'Diagonal dodge',
+        'Ataques': 'Attacks',
+        'Armada': 'Armed',
+        'Queixada': 'Jaw strike',
+        'Meia Lua de Compasso': 'Compass crescent',
+        // Add more translations here as needed
+    };
+
+    document.querySelectorAll('.node').forEach(node => {
+        node.addEventListener('mouseover', (e) => {
+            const translation = translations[node.textContent];
             if (translation) {
-                moveDescription.textContent = translation;
+                tooltip.textContent = translation;
+                tooltip.style.left = `${e.pageX}px`;
+                tooltip.style.top = `${e.pageY}px`;
+                tooltip.classList.add('visible');
             }
         });
-
-        move.addEventListener("mouseout", function () {
-            moveDescription.textContent = "";
+        node.addEventListener('mouseout', () => {
+            tooltip.classList.remove('visible');
         });
     });
 });
