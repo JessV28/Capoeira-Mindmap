@@ -8,89 +8,73 @@
     <head>
     ...
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif; /* Ensures fallbacks */
-            margin: 20px;
-        }
-
-        h3 {
-            color: navy;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 5px 0;
-            cursor: pointer;
-        }
-
-        li:hover {
-            color: darkred;
-        }
-
-        #moveDescription {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
-        <style>
-    /* Add this CSS to your existing styles */
-    li {
-        position: relative;
-        cursor: pointer;
+    /* Existing CSS styles */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 20px;
     }
 
+    h3 {
+        color: navy;
+        margin-top: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 5px 0;
+        cursor: pointer;
+        position: relative;
+    }
+
+    li:hover {
+        color: darkred;
+    }
+
+    #moveDescription {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+    }
+
+    /* Tooltip CSS for English translations */
     li:hover::after {
         content: " - English Translation"; /* Replace with the actual translations */
         position: absolute;
         top: -1.5em; /* Adjust the positioning as needed */
         left: 0;
-        background-color: white; /* Background color for the tooltip */
+        background-color: white;
         padding: 5px;
         border: 1px solid #ccc;
         border-radius: 5px;
         font-size: 14px;
-        color: green; /* Text color for the tooltip */
-        z-index: 1; /* Ensure the tooltip appears above the other content */
+        color: green;
+        z-index: 1;
         display: inline-block;
     }
-</style>
 
-        <style>
-    /* Add this CSS to your existing styles */
+    /* CSS for specific translations */
     .translate-esquivas:hover::after {
         content: " - Dodges"; /* English translation for "Esquivas" */
-        font-size: 14px;
-        color: green;
     }
 
     .translate-defrente:hover::after {
         content: " - Forward evasion technique"; /* English translation for "De Frente" */
-        font-size: 14px;
-        color: green;
     }
 
     .translate-delado:hover::after {
         content: " - Side evasion move"; /* English translation for "De Lado" */
-        font-size: 14px;
-        color: green;
     }
 
     .translate-diagonal:hover::after {
         content: " - Diagonal escape from an attack"; /* English translation for "Diagonal" */
-        font-size: 14px;
-        color: green;
     }
 </style>
 
-
-
-    </style>
 </head>
 
 </head>
