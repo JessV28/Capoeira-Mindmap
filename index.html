@@ -4,50 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capoeira Mind Map</title>
-
     <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif; /* Use a sans-serif font for readability */
-            margin: 20px;
-        }
-
-        h1 {
-            color: navy;
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin: 5px 0;
-            cursor: pointer;
-            position: relative;
-        }
-
-        li:hover::after {
-            content: attr(data-translation); /* Display the English translation */
-            position: absolute;
-            top: -1.5em;
-            left: 0;
-            background-color: white;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            color: green;
-            z-index: 1;
-            display: inline-block;
-        }
-
-        #moveDescription {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-        }
+        /* Your existing CSS styles */
     </style>
 </head>
 <body>
@@ -56,34 +14,29 @@
 
     <h2>Capoeira Moves</h2>
 
-<h3 data-translation="Dodges">Esquivas</h3>
-<ul>
-    <li data-translation="Forward dodge" data-audio="de_frente">De Frente</li>
- <!-- Moved up for preferred ordering -->
-    <li data-translation="Sideways dodge" data-audio="de_lado">De Lado</li>
-    <li data-translation="Diagonal dodge" data-audio=diagonal">Diagonal</li>
-</ul>
+    <h3 data-translation="Dodges">Esquivas</h3>
+    <ul>
+        <li class="node" data-translation="Forward dodge" data-audio="de_frente">De Frente</li>
+        <li class="node" data-translation="Sideways dodge" data-audio="de_lado">De Lado</li>
+        <li class="node" data-translation="Diagonal dodge" data-audio="diagonal">Diagonal</li>
+    </ul>
 
-<h3 data-translation="Attacks">Ataques</h3>
-<ul>
-    <li data-translation="Armed" data-audio=armed">Armada</li>
-    <li data-translation="Jaw strike" data-audio="queixada">Queixada</li>
-    <li data-translation="Compass crescent" data-audio="meia_lua_de_compasso">Meia Lua de Compasso</li>
-</ul>
-
+    <h3 data-translation="Attacks">Ataques</h3>
+    <ul>
+        <li class="node" data-translation="Armed" data-audio="armed">Armada</li>
+        <li class="node" data-translation="Jaw strike" data-audio="queixada">Queixada</li>
+        <li class="node" data-translation="Compass crescent" data-audio="meia_lua_de_compasso">Meia Lua de Compasso</li>
     </ul>
 
     <h3>Movimentos de Chão</h3>
     <ul>
-        <li data-translation="Ground move to avoid high attacks" data-audio="negativa">Negativa</li>
-        <li data-translation="Rolling move to dodge or counter" data-audio="rolê">Rolê</li>
-        <li data-translation="Basic descent to the ground for defense" data-audio="descida_basica">Descida Basica</li>
+        <li class="node" data-translation="Ground move to avoid high attacks" data-audio="negativa">Negativa</li>
+        <li class="node" data-translation="Rolling move to dodge or counter" data-audio="role">Rolê</li>
+        <li class="node" data-translation="Basic descent to the ground for defense" data-audio="descida_basica">Descida Basica</li>
     </ul>
 
     <div id="moveDescription"></div>
 
-    <!-- Your JavaScript code (script.js) should be included here -->
     <script src="script.js"></script>
 </body>
 </html>
-
