@@ -23,3 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Previous code...
+
+    document.querySelectorAll('.audio-button').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent triggering any parent event
+            const audio = new Audio(`audio/${this.dataset.audio}.mp3`);
+            audio.play();
+        });
+    });
+});
