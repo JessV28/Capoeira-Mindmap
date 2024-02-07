@@ -23,3 +23,13 @@
 
 .tooltip.visible {
     opacity: 1;
+
+.audio-button, .video-link {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.video-link {
+    text-decoration: none;
+    color: navy;
+}
