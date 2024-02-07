@@ -1,13 +1,47 @@
-/* style.css */
-.node {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: navy;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
     cursor: pointer;
-    transition: transform 0.5s ease;
+    position: relative;
 }
 
-.node:hover {
-    transform: scale(1.1);
+li:hover::after {
+    content: attr(data-translation);
+    position: absolute;
+    top: -1.5em;
+    left: 0;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: green;
+    z-index: 1;
+    display: inline-block;
 }
 
+#moveDescription {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Tooltip specific styles */
 .tooltip {
     position: absolute;
     text-align: center;
@@ -23,13 +57,4 @@
 
 .tooltip.visible {
     opacity: 1;
-
-.audio-button, .video-link {
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-.video-link {
-    text-decoration: none;
-    color: navy;
 }
