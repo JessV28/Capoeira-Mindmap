@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tooltip setup remains the same
+    // Tooltip setup
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
     document.body.appendChild(tooltip);
 
-    // No need to define translations here since we use data-translation attributes
-
     document.querySelectorAll('.node').forEach(node => {
+        // Tooltip display logic
         node.addEventListener('mouseover', (e) => {
-            // Use data-translation attribute for the translation
             const translation = node.getAttribute('data-translation');
             if (translation) {
                 tooltip.textContent = translation;
@@ -21,16 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
         node.addEventListener('mouseout', () => {
             tooltip.classList.remove('visible');
         });
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    // Previous code...
 
-    document.querySelectorAll('.audio-button').forEach(button => {
-        button.addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent triggering any parent event
-            const audio = new Audio(`audio/${this.dataset.audio}.mp3`);
-            audio.play();
+        // Audio playback logic for nodes with a 'data-audio' attribute
+        node.addEventListener('click', function() {
+            const audioFile = this.getAttribute('data-audio');
+            if (audioFile) {
+                const audio = new Audio(`audio/${audioFile}.mp3`);
+                audio.play();
+            }
         });
     });
 });
