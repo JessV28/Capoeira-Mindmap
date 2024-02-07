@@ -4,36 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capoeira Mind Map</title>
-    <style>
-        /* Your existing CSS styles */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Capoeira Moves Mind Map</h1>
-    <p>Welcome to the Capoeira Moves Interactive Mind Map.</p>
+    <p>Welcome to the Capoeira Moves Interactive Mind Map. Hover over a move to see its English translation and click to hear its pronunciation.</p>
 
-    <h2>Capoeira Moves</h2>
+    <div class="category">Esquivas</div>
+    <div class="content">
+        <ul>
+            <li class="node" data-translation="Forward dodge" data-audio="de_frente">De Frente</li>
+            <li class="node" data-translation="Sideways dodge" data-audio="de_lado">De Lado</li>
+            <li class="node" data-translation="Diagonal dodge" data-audio="diagonal">Diagonal</li>
+        </ul>
+    </div>
 
-    <h3 data-translation="Dodges">Esquivas</h3>
-    <ul>
-        <li class="node" data-translation="Forward dodge" data-audio="de_frente">De Frente</li>
-        <li class="node" data-translation="Sideways dodge" data-audio="de_lado">De Lado</li>
-        <li class="node" data-translation="Diagonal dodge" data-audio="diagonal">Diagonal</li>
-    </ul>
+    <div class="category">Ataques</div>
+    <div class="content">
+        <ul>
+            <li class="node" data-translation="Armed" data-audio="armed">Armada</li>
+            <li class="node" data-translation="Jaw strike" data-audio="queixada">Queixada</li>
+            <li class="node" data-translation="Compass crescent" data-audio="meia_lua_de_compasso">Meia Lua de Compasso</li>
+        </ul>
+    </div>
 
-    <h3 data-translation="Attacks">Ataques</h3>
-    <ul>
-        <li class="node" data-translation="Armed" data-audio="armed">Armada</li>
-        <li class="node" data-translation="Jaw strike" data-audio="queixada">Queixada</li>
-        <li class="node" data-translation="Compass crescent" data-audio="meia_lua_de_compasso">Meia Lua de Compasso</li>
-    </ul>
-
-    <h3>Movimentos de Chão</h3>
-    <ul>
-        <li class="node" data-translation="Ground move to avoid high attacks" data-audio="negativa">Negativa</li>
-        <li class="node" data-translation="Rolling move to dodge or counter" data-audio="role">Rolê</li>
-        <li class="node" data-translation="Basic descent to the ground for defense" data-audio="descida_basica">Descida Basica</li>
-    </ul>
+    <!-- Add more categories and nodes as needed -->
 
     <div id="moveDescription"></div>
 
